@@ -9,7 +9,6 @@ def generate_code(e):
     window.clearHTML()
     if test_number(number):
         data = json.dumps({'number': int(number)})
-        console.log(data)
         ajax.post(url, data=data, oncomlete=output_code)
 
 
