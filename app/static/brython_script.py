@@ -9,11 +9,10 @@ def generate_code(e):
     window.clearHTML()
     if test_number(number):
         data = json.dumps({'number': int(number)})
-        ajax.post(url, data=data, oncomlete=output_code)
+        ajax.post(url, data=data, oncomplete=output_code)
 
 
 def output_code(request):
-    console.log(request.text)
     window.resultHtml(1, request.text)
     window.getCoords()
 
@@ -34,7 +33,7 @@ def generate_label(e):
                            'name': name,
                            'sku': sku,
                            'field': field})
-        ajax.post(url, data=data, oncomlete=output_label)
+        ajax.post(url, data=data, oncomplete=output_label)
     else:
         document['hints'] <= 'ВЫ НЕ ЗАПОЛНИЛИ НИ ОДНОГО ПОЛЯ!'
 

@@ -19,4 +19,5 @@ async def gen_code(request):
 async def gen_etich(request):
     data = await request.json()
     Etich(**data).save_etich()
-    return web.Response(text='')
+    return web.Response(text=f"{data['number']}")
+
