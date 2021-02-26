@@ -4,7 +4,7 @@ import json
 
 @bind(document['btn_code'], 'click')
 def generate_code(e):
-    url = 'http://shtih.karapasa.ru/generate_code'
+    url = 'http://shtrih.karapasa.ru/generate_code'
     number = document['number'].value
     window.clearHTML()
     if test_number(number):
@@ -21,7 +21,7 @@ def output_code(request):
 
 @bind(document['btn_label'],'click')
 def generate_label(e):
-    url = 'http://shtih.karapasa.ru/generate_label'
+    url = 'http://shtrih.karapasa.ru/generate_label'
     number = document['number'].value
     compy = document['name'].value
     name = document['product'].value
