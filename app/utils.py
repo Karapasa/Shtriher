@@ -9,7 +9,8 @@ try:
     os.mkdir(dir_name)
     print('Directory ',dir_name,' created')
 except FileExistsError:
-    pass
+    print('Directory ',dir_name,' already exists')
+
 
 class Etich():
     font = ImageFont.truetype("DejaVuSansMono.ttf", size=18, encoding='utf-8')

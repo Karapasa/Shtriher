@@ -4,22 +4,24 @@ import json
 
 @bind(document['btn_code'], 'click')
 def generate_code(e):
-    url = 'http://0.0.0.0:8080/generate_code'
+    url = 'http://shtih.karapasa.ru/generate_code'
     number = document['number'].value
     window.clearHTML()
     if test_number(number):
         data = json.dumps({'number': int(number)})
-        ajax.post(url, data=data, oncomplete=output_code)
+        console.log(data)
+        ajax.post(url, data=data, oncomlete=output_code)
 
 
 def output_code(request):
+    console.log(request.text)
     window.resultHtml(1, request.text)
     window.getCoords()
 
 
 @bind(document['btn_label'],'click')
 def generate_label(e):
-    url = 'http://0.0.0.0:8080/generate_label'
+    url = 'http://shtih.karapasa.ru/generate_label'
     number = document['number'].value
     compy = document['name'].value
     name = document['product'].value
@@ -33,7 +35,7 @@ def generate_label(e):
                            'name': name,
                            'sku': sku,
                            'field': field})
-        ajax.post(url, data=data, oncomplete=output_label)
+        ajax.post(url, data=data, oncomlete=output_label)
     else:
         document['hints'] <= 'ВЫ НЕ ЗАПОЛНИЛИ НИ ОДНОГО ПОЛЯ!'
 

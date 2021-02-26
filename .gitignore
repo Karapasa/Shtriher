@@ -1,2 +1,3 @@
-venv/
-labels/
+/venv
+.log
+.env
