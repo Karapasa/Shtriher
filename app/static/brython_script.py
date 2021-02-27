@@ -10,11 +10,10 @@ def generate_code(e):
     if test_number(number):
         data = json.dumps({'number': int(number)})
         console.log(data)
-        ajax.post(url, data=data, oncomlete=output_code)
+        ajax.post(url, data=data, oncomplete=output_code)
 
 
 def output_code(request):
-    console.log(request.text)
     window.resultHtml(1, request.text)
     window.getCoords()
 

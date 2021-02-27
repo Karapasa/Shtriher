@@ -10,12 +10,13 @@ async def index(request):
     return {}
 
 @routes.post('/generate_code')
-async def post_index(request):
+async def gen_code(request):
     num = await request.json()
     Code(num['number']).save_code()
     return web.Response(text='')
+
 @routes.post('/generate_label')
-async def post_index(request):
+async def gen_etich(request):
     data = await request.json()
     Etich(**data).save_etich()
     return web.Response(text='')
