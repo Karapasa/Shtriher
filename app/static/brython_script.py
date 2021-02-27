@@ -6,10 +6,9 @@ import json
 def generate_code(e):
     url = 'http://shtrih.karapasa.ru/generate_code'
     number = document['number'].value
-    window.clearHTML()
+    window.clearHtml()
     if test_number(number):
         data = json.dumps({'number': int(number)})
-        console.log(data)
         ajax.post(url, data=data, oncomplete=output_code)
 
 
@@ -27,7 +26,7 @@ def generate_label(e):
     sku = document['sku'].value
     field = document['description'].value
     datas = (number, compy, name, sku, field)
-    window.clearHTML()
+    window.clearHtml()
     if test_number(number) and len([x for x in datas if x != '']) > 0:
         data = json.dumps({'number': number,
                            'compy': compy,
