@@ -1,6 +1,5 @@
-venv/
-labels/
 /venv
 .log
 .env
 .idea/
+labels/
