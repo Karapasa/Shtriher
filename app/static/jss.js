@@ -1,4 +1,3 @@
-//Удаление подсказок
 function clearHTML () {
 	var hintSht = document.getElementById('hintSht');
 	var hintEtick = document.getElementById('hints');
