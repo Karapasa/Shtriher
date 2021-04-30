@@ -13,8 +13,11 @@ def generate_code(e):
 
 
 def output_code(request):
-    window.resultHtml(1, request.text)
-    window.getCoords()
+    if request.text == 'error':
+        document['hintSht'] <= 'УПС, что-то пошло не так, попробуйте изменить данные'
+    else:
+        window.resultHtml(1, request.text)
+        window.getCoords()
 
 
 @bind(document['btn_label'],'click')
@@ -34,13 +37,18 @@ def generate_label(e):
                            'sku': sku,
                            'field': field})
         ajax.post(url, data=data, oncomlete=output_label)
+    elif test_number(number) and len(''.join(datas)) > 700:
+        document['hints'] <= 'ВЫ ПРЕВЫСИЛИ ОБЩИЙ ЛИМИТ ЗНАКОВ В 700'
     else:
         document['hints'] <= 'ВЫ НЕ ЗАПОЛНИЛИ НИ ОДНОГО ПОЛЯ!'
 
 def output_label(request):
-    numberEAN = request.text
-    window.resultHtml(2, numberEAN)
-    window.getCoords()
+    if request.text == 'error':
+        document['hints'] <= 'УПС, что-то пошло не так. Попробуйте изменить данные!'
+    else:
+        numberEAN = request.text
+        window.resultHtml(2, numberEAN)
+        window.getCoords()
 
 def test_number(num):
     if len(num) == 12: return True
