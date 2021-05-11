@@ -16,8 +16,7 @@ async def gen_code(request):
         Code(num['number']).save_code()
     except Exception:
         return web.Response(text='error')
-    else:
-        return web.Response(text=f"{num['number']}")
+    return web.Response(text=f"{num['number']}")
 
 @routes.post('/generate_label')
 async def gen_etich(request):
@@ -26,5 +25,4 @@ async def gen_etich(request):
         Etich(**data).save_etich()
     except Exception:
         return web.Response(text='error')
-    else:
-        return web.Response(text=f"{data['number']}")
+    return web.Response(text=f"{data['number']}")

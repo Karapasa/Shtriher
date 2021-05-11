@@ -20,7 +20,7 @@ def output_code(request):
         window.getCoords()
 
 
-@bind(document['btn_label'],'click')
+@bind(document['btn_label'], 'click')
 def generate_label(e):
     url = 'http://shtrih.karapasa.ru/generate_label'
     number = document['number'].value
@@ -36,7 +36,7 @@ def generate_label(e):
                            'name': name,
                            'sku': sku,
                            'field': field})
-        ajax.post(url, data=data, oncomlete=output_label)
+        ajax.post(url, data=data, oncomplete=output_label)
     elif test_number(number) and len(''.join(datas)) > 700:
         document['hints'] <= 'ВЫ ПРЕВЫСИЛИ ОБЩИЙ ЛИМИТ ЗНАКОВ В 700'
     else:

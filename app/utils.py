@@ -89,11 +89,10 @@ class Etich():
         size, len_str = self._get_font_size(data)
         logger.debug('Размеры шрифта (%s, %s); Кол-во символов %s', size, len_str, len(''.join(data)))
         txt = ''.join((self._get_text_per_str(x, len_str) if len(x) >= len_str else x for x in data))
-        print(txt)
         x, y = 25, 10
         idraw.multiline_text((x,y), text=txt, fill='black', font=self._get_font(size), spacing=2, align='left')
         self._get_shtrich()
-        sht = Image.open(dir_name + self.number + '_sht.png', 'r').resize((250, 120))
+        sht = Image.open(dir_name + self.number + '_sht.png', 'r').resize((250, 110))
 
         img.paste(sht, (102, 170))
         return img

@@ -16,7 +16,7 @@ logging_config = {
         }
     },
     'loggers': {
-        'combination_logger': {
+        'shtriher_logger': {
             'level': 'DEBUG',
             'handlers': ['file'],
             'propagate': False
